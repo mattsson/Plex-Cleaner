@@ -27,9 +27,9 @@ LogFile = ""  # Location of log file to save console output
 LogFileMode = "overwrite"  # File Mode for logging, overwrite or append, default is overwrite
 trigger_rescan = False  # trigger_rescan will rescan a section if changes are made to it
 EmailLog = False  # Email the log file contents at conclusion of script
-EmailServer = ""  # Email Server (for Gmail, use smtp.gmail.com)
-EmailServerPort = 0  # Email Server Port (for Gmail, use 587)
-EmailServerUseTLS = False  # Email Server - whether or not to use TLS (for Gmail, use true)
+EmailServer = "smtp.gmail.com"  # Email Server (for Gmail, use smtp.gmail.com)
+EmailServerPort = 587  # Email Server Port (for Gmail, use 587)
+EmailServerUseTLS = True  # Email Server - whether or not to use TLS (for Gmail, use true)
 EmailUsername = ""  # Email server username
 EmailPassword = ""  # Email server password - if using Gmail, you can use an "app password" so your regular email password isn't in plain text in your config. See: https://myaccount.google.com/apppasswords
 EmailRecipient = ""  # Email address to receive the log file contents, if enabled.
@@ -63,7 +63,7 @@ LocalMount = ""  # Path on the local computer to the media files
 # 'move' will move the file to the location given
 # 'keep' will do nothing to the file
 # 'flag' will do nothing to the file, but still keep track of stats
-default_action = 'flag'  # 'keep' | 'move' | 'copy' | 'delete' | 'flag'
+default_action = 'move'  # 'keep' | 'move' | 'copy' | 'delete' | 'flag'
 # plex_delete if set to True will use the Plex API to delete files instead of using system functions
 # Useful for remote plex installations
 plex_delete = False  # True | False
@@ -93,7 +93,7 @@ default_onDeck = True  # True | False
 # will be used
 default_minDays = 0  # Minimum number of days to keep
 # default_maxDays specifies the maximum number of days to keep an episode. Episodes added more than
-# default)maxDays ago will be deleted. If default_watched is True, then days from the last watched date
+# default_maxDays ago will be deleted. If default_watched is True, then days from the last watched date
 # will be used
 default_maxDays = 60  # Maximum number of days to keep an episode
 # default_location specifies the location that episodes will be copied or moved to if the action is such
@@ -103,7 +103,7 @@ default_location = ''  # /path/to/file
 # This will check if all users in the list have watched a show. Separate each user with a comma
 # You may use 'all' for the home Users and the script will check watch status of all the users in the Plex Home (Including Guest account if enabled)
 # It is probably better to list the users explicitly
-default_homeUsers = ''  # 'Bob,Joe,Will'
+default_homeUsers = 'all'  # 'Bob,Joe,Will'
 # if set to anything > 0, videos with watch progress greater than this will be considered watched
 default_progressAsWatched = 0  # Progress percentage to consider video as watched
 # list of folders to ignore for processing
